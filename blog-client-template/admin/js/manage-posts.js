@@ -2,6 +2,9 @@
 
 
 //Hämtar alla poster 
+
+fetchAllPosts();
+
 async function fetchAllPosts() {
     try {
         let response = await fetch('https://blog-api-assignment.up.railway.app/posts');
@@ -17,7 +20,7 @@ async function fetchAllPosts() {
             let tableData = [
                 post.title,
                 post.author,
-                post.tags.join(", "),// gör taggar till strängar
+                post.tags,
                 post.date
             ];
 
@@ -39,13 +42,31 @@ async function fetchAllPosts() {
 
             actionColumn.appendChild(updateButton);
 
-            //skapar radera-knapp och lägger till
+         //skapar radera-knapp och lägger till
             let deleteButton = document.createElement('button');
             deleteButton.textContent = "Radera";
-            deleteButton.addEventListener('click', () => {
+            deleteButton.dataset.id = post.id; 
 
-                deletePost(post.id);
+            deleteButton.addEventListener('click', async function(e) {
+                e.preventDefault();
+                let postId = e.target.dataset.id;
+
+                try {
+                    let response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${postId}`, {
+                        method: 'DELETE'
+                    });
+
+                    if(response.ok) {
+                        e.target.parentNode.parentNode.remove();
+                        
+                    } else {
+                        throw new Error('Gick ej att radera inlägg');
+                    }
+                } catch (error) {
+                    console.error('Felmeddelande: ', error);
+                }
             });
+
 
             actionColumn.appendChild(deleteButton);
 
@@ -62,4 +83,5 @@ async function fetchAllPosts() {
     }
 }
 
-fetchAllPosts();
+
+
