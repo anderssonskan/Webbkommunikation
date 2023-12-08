@@ -10,11 +10,10 @@ async function fetchAllPosts() {
             let postDate = new Date(post.date)
             
             const postContent = (post.content.length > 100)  
-                ? post.content.substring(0, 100) + '...' + ` <a href = "js/post.js" data-content = "${post.content}" class = "readMoreLink">Visa mer</a>`
+                ? post.content.substring(0, 100) + '...' + ` <a href = "post.html?id=${post._id}" data-content = "${post.content}" class = "readMoreLink">read more</a>`
                 : post.content; 
             
                 
-            // ${postDate.getFullYear()}-${postDate.getMonth()+1}-${postDate.getDate()} 
             postsListHTML += `
             <li class="list-group-item">
                 <p class="post-content">
@@ -29,7 +28,7 @@ async function fetchAllPosts() {
                 </p>
 
                 <div>
-                    <a href="update-post.html?id=${post._id}">Update</a> 
+                    <a href="admin/update-post.html?id=${post._id}">Update</a> 
                     <a href="#" data-id="${post._id}" class="delete-links">Delete</a> 
                 </div>
             </li> `;
