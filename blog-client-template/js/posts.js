@@ -16,19 +16,22 @@ async function fetchAllPosts() {
                 
             postsListHTML += `
             <li class="list-group-item">
+                
+                <h2>${post.title}</h2>
                 <p class="post-content">
-                    ${post.title} <br>
-                    ${postContent} <br> 
-                    Av: ${post.author} 
-                    Taggar: ${post.tags} <br> 
+                    ${postContent} 
+                </p>
+                <div class = "info">
+                    <strong>Av:</strong> ${post.author} 
+                    <strong>Taggar:</strong> ${post.tags} <br> 
                     <span class="date"> 
                         ${postDate.toLocaleDateString()}
                         ${postDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit"})}
                     </span> 
-                </p>
+                </div>
 
-                <div>
-                    <a href="admin/update-post.html?id=${post._id}">Update</a> 
+                <div class = "linkStyle">
+                    <a href="admin/update-post.html?id=${post._id}">Update</a>
                     <a href="#" data-id="${post._id}" class="delete-links">Delete</a> 
                 </div>
             </li> `;
