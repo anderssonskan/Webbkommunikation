@@ -9,26 +9,34 @@ async function fetchAllPosts() {
         for (let post of posts) {
             let postDate = new Date(post.date)
             
+            const postContent = (post.content.length > 100)  
+                ? post.content.substring(0, 100) + '...' + ` <a href = "js/post.js" data-content = "${post.content}" class = "readMoreLink">Visa mer</a>`
+                : post.content; 
+            
+                
+            // ${postDate.getFullYear()}-${postDate.getMonth()+1}-${postDate.getDate()} 
             postsListHTML += `
             <li class="list-group-item">
-            <p>${post.title} <br>${post.content} <br> Av: ${post.author} Taggar: ${post.tags} <br> <span class="date"> ${postDate.getFullYear()}-${postDate.getMonth()+1}-${postDate.getDate()} ${postDate.toLocaleTimeString()}</span> </p>
+                <p class="post-content">
+                    ${post.title} <br>
+                    ${postContent} <br> 
+                    Av: ${post.author} 
+                    Taggar: ${post.tags} <br> 
+                    <span class="date"> 
+                        ${postDate.toLocaleDateString()}
+                        ${postDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit"})}
+                    </span> 
+                </p>
+
+                <div>
+                    <a href="update-post.html?id=${post._id}">Update</a> 
+                    <a href="#" data-id="${post._id}" class="delete-links">Delete</a> 
+                </div>
+            </li> `;
             
-            <div>
-            <a href="update-post.html?id=${post._id}">Update</a> |
-            <a href="#" data-id="${post._id}" class="delete-links">Delete</a> 
-            </div>
-            </li>
-            `
         }
         document.getElementById('postList').innerHTML = postsListHTML;
-    }catch(error) {
+        }catch(error) {
         console.log(error)
     }
 }
-
-
-
-
-/* if (post.content.length > 100){
-    <a href="js/post.js">read more...</a>
-} */

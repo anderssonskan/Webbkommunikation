@@ -1,0 +1,27 @@
+li {
+    list-style-type: none;
+}
+
+body {
+    background-color: pink;
+    margin: 50px;
+}
+#container {
+    background-color: beige;
+    border: solid 1px black;
+}
+
+li.list-group-item {
+    border: solid 1px black;
+    margin: 10px;
+    text-align: center;
+}
+
+
+post.title{
+    font-size: 30px;
+}
+
+ul#postList {
+    padding: 10px;
+}
