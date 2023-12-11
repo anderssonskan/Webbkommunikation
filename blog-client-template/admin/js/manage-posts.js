@@ -37,7 +37,8 @@ async function fetchAllPosts() {
             updateButton.textContent = "Uppdatera";
             updateButton.addEventListener('click', () => {
 
-                updatePost(post.id)
+                document.location.href = '../admin/update-post.html?id=' + post._id;
+                // updatePost(post.id)
             });
 
             actionColumn.appendChild(updateButton);
