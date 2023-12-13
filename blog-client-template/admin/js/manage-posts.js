@@ -59,6 +59,7 @@ async function fetchAllPosts() {
 
                     if(response.ok) {
                         e.target.parentNode.parentNode.remove();
+
                         
                     } else {
                         throw new Error('Gick ej att radera inlägg');
