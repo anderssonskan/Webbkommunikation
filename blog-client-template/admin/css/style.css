@@ -1,7 +1,52 @@
-table, th, td {
+
+
+body {
+    background-color: rgb(172, 226, 193);
+}
+
+table {
+    background-color: rgb(172, 226, 193);
+}
+th, td {
     border: solid black 1px;
     padding: 10px;
+    background-color: white;
     
+}
+
+#adminHeader {
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 45px;
+}
+
+#createPostLink {
+    margin-left: 2%;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+#goToBlogLink {
+    
+    text-decoration: none;
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    background-color: rgba(160, 160, 160, 0.733);
+    border-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 form input {
