@@ -1,5 +1,3 @@
-
-
 let urlParams = new URLSearchParams(location.search);
 let postId = urlParams.get('id');
 
@@ -31,5 +29,3 @@ async function fetchPost() {
 }
 
 fetchPost();
-
- 
