@@ -6,15 +6,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Skapa blogginlägg</h1>
-    <a href="index.html">Tillbaka</a>
-<form id="createPostForm">
+    <a href="index.html" id="goBackLink">Tillbaka</a>
+    <h1 id="createHeader">Skapa blogginlägg</h1>
+    
+    <div>
+<form>
     <input type="text" id="titleInput" placeholder="Titel">
     <input type="text" id="authorInput" placeholder="Författare">
     <textarea name="newPost" id="contentTextArea" cols="30" rows="10" placeholder="Skriv ditt inlägg här..."></textarea>
-    <select name="tags" id="genre"></select>
+    <select name="tags" id="genre" multiple>
+        <option value="Politik">Politik</option>
+        <option value="Natur">Natur</option>
+        <option value="Ekonomi">Ekonomi</option>
+        <option value="Vetenskap">Vetenskap</option>
+        <option value="Mat">Mat</option>
+        <option value="Konst">Konst</option>
+        <option value="Resor">Resor</option>
+        <option value="Spel">Spel</option>
+    </select>
     <input type="submit" value="Skapa inlägg">
 </form>
+</div>
     <script src="js/create-post.js"></script>
 </body>
 </html>

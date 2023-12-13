@@ -8,10 +8,12 @@
 </head>
 
 <body>
-
-    <a href="../index.html">Gå till bloggen</a>
-    <h1>Inlägg</h1>
-    <a href="create-post.html">Skapa inlägg</a>
+<div id="adminContainer">
+    <a href="../index.html" id="goToBlogLink">Gå till bloggen</a>
+    <a href="create-post.html" id="createPostLink">Skapa inlägg</a>
+    
+    <h1 id="adminHeader">Inlägg</h1>
+    
     <table id="postsTable">
         <thead>
         <tr>
@@ -26,6 +28,7 @@
         
     </tbody>
     </table>
+    </div>
     <script src="js/manage-posts.js"></script>
 </body>
 
