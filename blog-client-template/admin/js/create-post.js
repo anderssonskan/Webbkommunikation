@@ -10,12 +10,18 @@ async function createPost(e) {
     let postForm = e.target;
 
     try {
+
+        //Se till att flera alternativ kan väljas och synas i tabellen
+        let selectedOptions = [...document.getElementById('genre').options]
+            .filter(option => option.selected)
+            .map(option => option.value);
+            
         //Objekt för att snappa upp alla värden som användaren skriver in i de olika fälten
         let data = {
             "title": document.getElementById('titleInput').value,
             "author": document.getElementById('authorInput').value,
             "content": document.getElementById('contentTextArea').value,
-            "tags": document.getElementById('genre').value
+            "tags": selectedOptions
         };
 
         //POST-metoden för att skapa nytt samt till JSON
