@@ -27,7 +27,7 @@ li.list-group-item {
     background-color: rgba(16, 99, 64, 0.774);
     border-radius: 10px;
     width: 700px;
-    padding:
+    
 }
 
 ul#postList {
@@ -79,8 +79,5 @@ color: rgb(116, 116, 116);
 }
 
 p {
-    color: white;
+color: black;
 }
-
-
-
