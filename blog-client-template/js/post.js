@@ -1,31 +1,30 @@
-let urlParams = new URLSearchParams(location.search);
-let postId = urlParams.get('id');
 
-async function fetchPost() {
-    try {
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let postId = urlParams.get('id');
         
-        if (!postId) {
-            throw new Error('Felmeddelande');
+        async function fetchPost() {
+            try {
+                console.log(postId); 
+                let response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${postId}`);
+                let post = await response.json();
+        
+                console.log(post); 
+        
+                let postDate = new Date(post.date);
+                let fullPostHTML = `
+                    <h1>${post.title}</h1>
+                    <p><strong>Av:</strong> ${post.author}</p>
+                    <p><strong>Taggar:</strong> ${post.tags}</p>
+                    <p>${post.content}</p>
+                    <p><strong>Datum:</strong> ${postDate.toLocaleString()}</p>
+                `;
+        
+                console.log(fullPostHTML);
+                document.getElementById('blogPost').innerHTML = fullPostHTML;
+            } catch (error) {
+                console.error(error);
+            }
         }
-
-        let response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${postId}`);
         
-        if (!response.ok) {
-            throw new Error('Felmeddelande');
-        }
-
-        let post = await response.json();
-        console.log(post);
-        
-        document.getElementById('postTitle').innerHTML = `<h1>${post.title}</h1>`;
-        document.getElementById('postAuthor').innerHTML = `<strong>Av:</strong> ${post.author}`;
-        document.getElementById('postTags').innerHTML = `<strong>Taggar:</strong> ${post.tags}`;
-        document.getElementById('postContent').innerHTML = `<p>${post.content}</p>`;
-        document.getElementById('postDate').innerHTML = `<strong>Datum:</strong> ${new Date(post.date).toLocaleString()}`;
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-fetchPost();
+        fetchPost();
