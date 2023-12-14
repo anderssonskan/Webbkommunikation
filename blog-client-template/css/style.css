@@ -6,10 +6,6 @@ li {
     list-style-type: none;
 }
 
-/* body {
-    margin: 50px;
-    background-color: black;
-} */
 #container {
     background-image: url(3_autumn.webp);
     background-color: rgb(0, 0, 0);
@@ -22,12 +18,16 @@ ul#postList {
 li.list-group-item {
     margin: 0 auto;
     text-align: center;
-    height: 250px;
+    height: 200px;
     background-size: cover;
-    background-color: rgba(16, 99, 64, 0.774);
+    background-color: rgba(236, 200, 122, 0.774);
     border-radius: 10px;
-    width: 700px;
-    
+    width: 700px; 
+}
+
+p.post-content {
+    height: 50px;
+    margin-top: 25px;
 }
 
 ul#postList {
@@ -38,25 +38,10 @@ background-image {
     opacity: 0.5;
   }
 
-.linkStyle a{
-    background-color: rgb(197, 146, 35);
-    padding: 3px;
-    border: solid 0.5px rgb(63, 63, 63);
-    margin-top: 20px;
-    display: inline-block;
-    border-radius: 10%;
-    color: white;
-    text-decoration: none;
-}
-
-.linkStyle a:hover {
-    background-color: white;
-    color: black;
-}
-
-h2 {
+h2, h1 {
     padding-top: 25px;
-    color: white;
+    color: rgb(0, 0, 0);
+    text-align: center;
 }
 
 .info {

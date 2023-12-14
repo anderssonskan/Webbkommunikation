@@ -51,6 +51,11 @@ button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
 /*Styling för create-post sidan*/
 
 #createHeader {
